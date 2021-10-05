@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UniversalPlanning.GuestHomeScreenController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="687.3333206176758" minWidth="10.0" prefWidth="654.3333536783854" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="100.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="361.3333295186361" minHeight="10.0" prefHeight="240.33333333333331" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="280.99998474121094" minHeight="10.0" prefHeight="159.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="150.0" style="-fx-background-color: #1976D2;">
+         <children>
+            <Label layoutX="51.0" layoutY="35.0" text="UP" textFill="WHITE">
+               <font>
+                  <Font name="Dubai Bold" size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1976D2;" GridPane.rowIndex="1">
+         <children>
+            <VBox layoutX="14.0" layoutY="33.0" prefHeight="266.0" prefWidth="148.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #1868B4;">
+                     <children>
+                        <Button layoutX="35.0" layoutY="12.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="78.0" style="-fx-background-color: transparent;" text="Home" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnAboutMenu" layoutX="35.0" layoutY="12.0" mnemonicParsing="false" onAction="#handleAboutMenuButtonAction" prefHeight="44.0" prefWidth="78.0" style="-fx-background-color: transparent;" text="About" textFill="WHITE">
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                  <AnchorPane prefHeight="200.0" prefWidth="148.0" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="148.0" style="-fx-background-color: #1976D2;" GridPane.rowIndex="2" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
+         <children>
+            <Label layoutX="73.0" layoutY="25.0" text="Your Events">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtGuestID" layoutX="393.0" layoutY="33.0" promptText="Enter GuestID" />
+            <Button fx:id="btnSearch" layoutX="556.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleSearchButton" text="Search" />
+         </children></AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <TableView fx:id="eventTableView" layoutX="72.0" layoutY="-63.0" prefHeight="217.0" prefWidth="542.0">
+              <columns>
+                <TableColumn fx:id="eventID" prefWidth="75.0" text="Event ID" />
+                <TableColumn fx:id="eventName" prefWidth="134.66668701171875" text="Name" />
+                  <TableColumn fx:id="eventAddress" prefWidth="145.33334350585938" text="Address" />
+                  <TableColumn fx:id="eventDateTime" minWidth="0.0" prefWidth="182.6666259765625" text="Time" />
+              </columns>
+            </TableView>
+            <Label fx:id="lblRsvpStatus" layoutX="72.0" layoutY="163.0" prefHeight="38.0" prefWidth="361.0" text="RSVP">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtRsvpEventID" layoutX="72.0" layoutY="209.0" promptText="Enter Event ID" />
+            <Label layoutX="72.0" layoutY="242.0" prefHeight="25.0" prefWidth="94.0" text="Decision:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="375.0" layoutY="209.0" />
+            <Text layoutX="246.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To RSVP, please enter in your Event ID, Decision (Y or N) and Dietary Requirements if you wish to. " wrappingWidth="86.41275024414062">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <TextField fx:id="txtDietaryRequirements" layoutX="75.0" layoutY="41.0" prefHeight="91.0" prefWidth="185.0" promptText="Dietary Requirements (optional)" />
+            <Button fx:id="btnConfirm" layoutX="77.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleConfirmButton" text="Confirm" />
+            <TextField fx:id="txtDecision" layoutX="74.0" layoutY="2.0" prefHeight="27.0" prefWidth="45.0" promptText="Y/N" />
+         </children></AnchorPane>
+   </children>
+</GridPane>
